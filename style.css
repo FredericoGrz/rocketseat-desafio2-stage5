@@ -10,4 +10,69 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: #FFF;
+}
+
+#container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(5rem, 1rem + 5vw, 30rem);
+  padding: .5rem;
+}
+
+#container #section1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+}
+
+#section1 .timer {
+  display: flex;
+}
+
+.timer p {
+  font-weight: 500;
+  font-size: 12.6rem;
+  line-height: 14.8rem;
+
+  color: #323238;
+}
+
+#section1 .controls {
+  display: flex;
+  gap: 4rem;
+}
+
+.controls button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 3.2rem;
+}
+
+.card {
+  background: #E1E1E6;
+  border-radius: 2.4rem;
+  padding: 4.5rem;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.cards .enabled {
+  background: #02799D;
+}
+
+.enabled svg path {
+  fill: #FFF
 }
