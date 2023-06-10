@@ -4,7 +4,10 @@ import {
   btnForest,
   btnRain,
   btnCoffeeShop,
-  btnFire
+  btnFire,
+  btnSun,
+  btnMoon,
+  body
 } from "./elements.js";
 
 export default function Display() {
@@ -25,6 +28,19 @@ export default function Display() {
     btnFire.classList.remove("enabled")
   }
 
-  return { updateDisplay, enableSoundForButton, unableSoundForAllButtons }
+  function darkMode() {
+    body.classList.remove("light-theme")
+    body.classList.add("dark-theme")
+    btnSun.classList.toggle("enabled")
+    btnMoon.classList.toggle("enabled")
+  }
+  function lightMode() {
+    body.classList.remove("dark-theme")
+    body.classList.add("light-theme")
+    btnSun.classList.toggle("enabled")
+    btnMoon.classList.toggle("enabled")
+  }
+
+  return { updateDisplay, enableSoundForButton, unableSoundForAllButtons, darkMode, lightMode }
 }
 

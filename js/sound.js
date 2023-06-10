@@ -3,6 +3,12 @@ export default function Sound() {
   let rain = new Audio("../assets/Chuva.wav")
   let coffeeShop = new Audio("../assets/Cafeteria.wav")
   let fire = new Audio("../assets/Lareira.wav")
+  let defaultVolume = 0.5;
+
+  forest.volume = defaultVolume
+  rain.volume = defaultVolume
+  coffeeShop.volume = defaultVolume
+  fire.volume = defaultVolume
 
   function play(audio) {
     pause(forest)
@@ -17,8 +23,12 @@ export default function Sound() {
     audio.pause()
   }
 
+  function updateVolume(audio, volume) {
+    audio.volume = volume / 100
+  }
+
   return {
-    forest, rain, coffeeShop, fire, play, pause
+    forest, rain, coffeeShop, fire, play, pause, updateVolume
   }
 
 }

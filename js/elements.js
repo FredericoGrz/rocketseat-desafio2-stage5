@@ -8,6 +8,13 @@ const btnForest = document.querySelector("#btnForest")
 const btnRain = document.querySelector("#btnRain")
 const btnCoffeeShop = document.querySelector("#btnCoffeeShop")
 const btnFire = document.querySelector("#btnFire")
+const btnSun = document.querySelector("#btnSun")
+const btnMoon = document.querySelector("#btnMoon")
+const body = document.querySelector("body")
+const forestVolume = document.querySelector("#btnForest .volume-range")
+const rainVolume = document.querySelector("#btnRain .volume-range")
+const coffeeShopVolume = document.querySelector("#btnCoffeeShop .volume-range")
+const fireVolume = document.querySelector("#btnFire .volume-range")
 
 
 export {
@@ -20,5 +27,12 @@ export {
   btnForest,
   btnRain,
   btnCoffeeShop,
-  btnFire
+  btnFire,
+  btnSun,
+  btnMoon,
+  body,
+  forestVolume,
+  rainVolume,
+  coffeeShopVolume,
+  fireVolume
 }

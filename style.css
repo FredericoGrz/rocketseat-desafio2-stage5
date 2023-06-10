@@ -12,8 +12,9 @@ body {
   font-family: 'Roboto', sans-serif;
   min-width: 100vw;
   min-height: 100vh;
-  background: #FFF;
 }
+
+
 
 #container {
   height: 100vh;
@@ -39,7 +40,6 @@ body {
   font-size: 12.6rem;
   line-height: 14.8rem;
 
-  color: #323238;
 }
 
 #section1 .controls {
@@ -61,18 +61,126 @@ body {
 }
 
 .card {
-  background: #E1E1E6;
   border-radius: 2.4rem;
   padding: 4.5rem;
-  display: grid;
-  place-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 2rem;
+  max-width: 14rem;
+  max-height: 15rem;
+}
+
+.theme-changer {
+  position: absolute;
+  top: 6rem;
+  right: 6rem;
+}
+
+.theme-changer .enabled {
+  display: block !important;
+}
+
+.theme-changer button {
+  display: none;
+  background: none;
+  border: none;
   cursor: pointer;
 }
 
-.cards .enabled {
+.light-theme {
+  background: #FFF;
+}
+
+.dark-theme {
+  background: #121214;
+}
+
+.light-theme .timer p {
+  color: #323238;
+}
+
+.dark-theme .timer p {
+  color: #FFF;
+}
+
+.light-theme #section1 .controls button svg path {
+  fill: #000;
+}
+
+.dark-theme #section1 .controls button svg path {
+  fill: #C4C4CC;
+}
+
+.light-theme #section2 .card {
+  background: #E1E1E6;
+}
+
+.dark-theme #section2 .card {
+  background: #29292E;
+}
+
+.light-theme #section2 .card svg path {
+  fill: #323238;
+}
+
+.dark-theme #section2 .card svg path {
+  fill: #C4C4CC;
+}
+
+.light-theme #section2 .enabled {
   background: #02799D;
+}
+
+#section2 .enabled:hover {
+  padding: 1rem;
+}
+
+#section2 .enabled:hover .volume {
+  display: block;
+}
+
+.dark-theme #section2 .enabled {
+  background: #0A3442;
 }
 
 .enabled svg path {
   fill: #FFF
+}
+
+.volume {
+  display: none;
+}
+
+.volume .volume-range {
+  /* Estilize a barra do controle deslizante */
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: .5rem;
+  border-radius: .5rem;
+  background: #FFF;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.volume-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FFF;
+  cursor: pointer;
+}
+
+.volume-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FFF;
+  cursor: pointer;
 }

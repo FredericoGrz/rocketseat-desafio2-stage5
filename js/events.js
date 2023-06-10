@@ -6,7 +6,13 @@ import {
   btnForest,
   btnRain,
   btnCoffeeShop,
-  btnFire
+  btnFire,
+  btnSun,
+  btnMoon,
+  forestVolume,
+  rainVolume,
+  coffeeShopVolume,
+  fireVolume
 } from "./elements.js";
 
 import Sound from "./sound.js"
@@ -86,4 +92,47 @@ export default function Events() {
       display.enableSoundForButton(btnFire)
     }
   })
+
+  btnSun.addEventListener("click", function () {
+    display.darkMode()
+  })
+  btnMoon.addEventListener("click", function () {
+    display.lightMode()
+  })
+
+  //Para evitar de ativar o click da div card
+  forestVolume.addEventListener("click", function (event) {
+    event.stopPropagation()
+  })
+
+  forestVolume.addEventListener("input", function (event) {
+    sound.updateVolume(sound.forest, event.target.value)
+  })
+
+  //Para evitar de ativar o click da div card
+  rainVolume.addEventListener("click", function (event) {
+    event.stopPropagation()
+  })
+
+  rainVolume.addEventListener("input", function (event) {
+    sound.updateVolume(sound.rain, event.target.value)
+  })
+
+  //Para evitar de ativar o click da div card
+  coffeeShopVolume.addEventListener("click", function (event) {
+    event.stopPropagation()
+  })
+
+  coffeeShopVolume.addEventListener("input", function (event) {
+    sound.updateVolume(sound.coffeeShop, event.target.value)
+  })
+  //Para evitar de ativar o click da div card
+  fireVolume.addEventListener("click", function (event) {
+    event.stopPropagation()
+  })
+
+  fireVolume.addEventListener("input", function (event) {
+    sound.updateVolume(sound.fire, event.target.value)
+  })
+
 }
